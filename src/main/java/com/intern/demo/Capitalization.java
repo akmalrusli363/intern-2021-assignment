@@ -1,6 +1,7 @@
 package com.intern.demo;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 import java.util.Locale;
@@ -14,7 +15,7 @@ public class Capitalization {
         String[] words = input.toLowerCase(Locale.ROOT).split("\\s");
         StringBuilder output = new StringBuilder();
         for (String word : words) {
-            output.append(word.substring(0, 1).toUpperCase(Locale.ROOT)).append(word.substring(1)).append(" ");
+            output.append(StringUtils.capitalize(word)).append(" ");
         }
         return output.toString().trim();
     }
